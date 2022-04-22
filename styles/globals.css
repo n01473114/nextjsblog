@@ -1,16 +1,247 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --header-height: 5rem;
+}
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #e7e7e7;
+  background-image: radial-gradient(#000000 0.5px, transparent 0.5px), radial-gradient(#000000 0.5px, #e7e7e7 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+section h1 {
+  font-size: 2rem;
+}
+
+section h2 {
+  font-size: medium;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 15px 0;
+  line-height: 1.8;
 }
 
 a {
-  color: inherit;
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  transition: all 0.3s ease 0s;
+}
+
+main a {
+  color: #cb8a2a;
+  ;
+}
+
+main a:hover {
+  color: #fcb040
+}
+
+ul,
+ol {
+  padding-left: 2rem;
+}
+
+img {
+  width: 100%;
+}
+
+.img-container {
+  overflow: hidden;
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.img-container img {
+  transition: transform .5s, filter 0.5s ease-in-out;
+  filter: grayscale(100%);
+  object-position: 50% 50%;
+}
+
+.img-container:hover img {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+.img-btn {
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.8rem 0.5rem;
+  background-color: #fcb040;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 11px 30px -20px rgba(198, 166, 58, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 2;
+}
+
+.header-home {
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.header-home:hover {
+  color: white;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  overflow: auto;
+  padding: 0 10px;
+}
+
+.main-container {
+  margin-top: var(--header-height);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #fcb040;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease 0s;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-back {
+  display: flex;
+  background-color: transparent;
+  color: #868686;
+  border-radius: 50rem;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.btn-back:hover {
+  background-color: transparent;
+  color: #fcb040;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 0 2% 0 2%;
+  padding-top: 1rem;
+}
+
+.posts :first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 0;
+  border: 1px solid black;
+  background-color: #e7e7e7;
+}
+
+.card-page {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+}
+
+.post-title {
+  margin: 10px 0;
+}
+
+.post-date {
+  display: inline-block;
+  font-size: small;
+  text-align: right;
+  margin-bottom: 20px;
+  padding: 3px 10px;
+  border-radius: 1rem;
+  border: 2px #5e5e5e solid;
+  color: #323232;
+}
+
+.post-body ul,
+ol {
+  line-height: 2;
+  margin: 10px 0;
+}
+
+.post-body pre {
+  -color: #f4f4f4;
+  padding: 20px;
+  margin: 20px 0;
+  line-height: 2.3;
+}
+
+footer {
+  margin-top: 1rem;
+  padding: 0.8rem 0.5rem;
+  background-color: white;
+  font-size: small;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+footer a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+footer a:hover {
+  color: #fcb040;
+}
+
+footer div {
+  margin: 4px;
+}
+
+@media (max-width: 500px) {
+  .posts {
+    grid-template-columns: 1fr;
+  }
+
+  .posts :first-child {
+    grid-column: auto;
+    grid-row: auto;
+  }
 }
