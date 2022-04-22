@@ -13,7 +13,7 @@ export default function PostPage({
     <>
     <section className='card card-page'>
       <Link href='/'>
-        <a className='btn btn-back'>🠔</a>
+        <a className='btn btn-back'>←</a>
       </Link>
       <h1 className='post-title'>{title}</h1>
       <h2>By {authors}</h2>
