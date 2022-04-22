@@ -9,7 +9,10 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>AMIDI Blog</title>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>AMIDI Blog</title>
       </Head>
 
       <div className='posts'>

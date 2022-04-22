@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
       <main className='container main-container'>
         <Component {...pageProps} />
       </main>
-      <Footer></Footer>
+      <Footer />
     </>
   )
 }
